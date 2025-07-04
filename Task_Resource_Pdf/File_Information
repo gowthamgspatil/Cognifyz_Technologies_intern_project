@@ -1,1 +1,86 @@
 
+
+
+###  **Internship Overview**
+
+* Offered by: **Cognifyz Technologies**
+* Focus: Data Analysis, AI, ML, and related analytics tools
+* Purpose: Hands-on project tasks to showcase your skills
+* Expected Deliverables:
+
+  * Separate file for each task level
+  * LinkedIn post with a **video demonstration** of your work
+  * Use hashtags like `#cognifyz`, `#cognifyzTech`, and tag the company
+  * Maintain **academic integrity** (no plagiarism or copied code)
+
+---
+
+###  **Task Levels**
+
+You must complete **any 2 out of 3 levels**. Completing **Level 3** (any 2 out of 3 tasks) may make you **eligible for a stipend**.
+
+---
+
+###  **Level 1 Tasks (Basic Analysis)**
+
+1. **Top Cuisines**:
+
+   * Find top 3 cuisines
+   * Show % of restaurants serving each
+
+2. **City Analysis**:
+
+   * City with the most restaurants
+   * Avg. rating per city
+   * City with highest avg. rating
+
+3. **Price Range Distribution**:
+
+   * Histogram/bar chart of price ranges
+   * % of restaurants in each price category
+
+4. **Online Delivery**:
+
+   * % offering online delivery
+   * Compare ratings: with vs without delivery
+
+---
+
+###  **Level 2 Tasks (Intermediate Analysis)**
+
+1. **Cuisine Combination**:
+
+   * Most common cuisine combinations
+   * Check if some combos get higher ratings
+
+2. **Geographic Analysis**:
+
+   * Plot restaurants on map (lat/lon)
+   * Identify patterns/clusters
+
+3. **Restaurant Chains**:
+
+   * Find chains in the dataset
+   * Analyze their ratings/popularity
+
+4. **Restaurant Reviews**:
+
+   * Most common positive/negative words
+   * Avg. review length and correlation with rating
+
+---
+
+###  **Level 3 Tasks (Advanced Analysis)**
+
+1. **Votes Analysis**:
+
+   * Restaurants with highest/lowest votes
+   * Correlation between votes and ratings
+
+2. **Price vs. Delivery & Booking**:
+
+   * Relationship between price range and:
+
+     * Online delivery availability
+     * Table booking
+
