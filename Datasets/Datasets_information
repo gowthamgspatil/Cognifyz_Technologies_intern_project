@@ -1,1 +1,274 @@
+import pandas as pd
 
+file_path = "/mnt/data/Dataset .csv"
+df = pd.read_csv(file_path)
+
+dataset_info = df.info()
+first_rows = df.head()
+summary = df.describe(include='all')
+
+missing_values = df.isnull().sum()
+
+(dataset_info, first_rows, summary, missing_values)
+
+
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 9551 entries, 0 to 9550
+Data columns (total 21 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   Restaurant ID         9551 non-null   int64  
+ 1   Restaurant Name       9551 non-null   object 
+ 2   Country Code          9551 non-null   int64  
+ 3   City                  9551 non-null   object 
+ 4   Address               9551 non-null   object 
+ 5   Locality              9551 non-null   object 
+ 6   Locality Verbose      9551 non-null   object 
+ 7   Longitude             9551 non-null   float64
+ 8   Latitude              9551 non-null   float64
+ 9   Cuisines              9542 non-null   object 
+ 10  Average Cost for two  9551 non-null   int64  
+ 11  Currency              9551 non-null   object 
+ 12  Has Table booking     9551 non-null   object 
+ 13  Has Online delivery   9551 non-null   object 
+ 14  Is delivering now     9551 non-null   object 
+ 15  Switch to order menu  9551 non-null   object 
+ 16  Price range           9551 non-null   int64  
+ 17  Aggregate rating      9551 non-null   float64
+ 18  Rating color          9551 non-null   object 
+ 19  Rating text           9551 non-null   object 
+ 20  Votes                 9551 non-null   int64  
+dtypes: float64(3), int64(5), object(13)
+memory usage: 1.5+ MB
+
+
+(None,
+    Restaurant ID         Restaurant Name  Country Code              City  
+ 0        6317637        Le Petit Souffle           162       Makati City   
+ 1        6304287        Izakaya Kikufuji           162       Makati City   
+ 2        6300002  Heat - Edsa Shangri-La           162  Mandaluyong City   
+ 3        6318506                    Ooma           162  Mandaluyong City   
+ 4        6314302             Sambo Kojin           162  Mandaluyong City   
+ 
+                                              Address  
+ 0  Third Floor, Century City Mall, Kalayaan Avenu...   
+ 1  Little Tokyo, 2277 Chino Roces Avenue, Legaspi...   
+ 2  Edsa Shangri-La, 1 Garden Way, Ortigas, Mandal...   
+ 3  Third Floor, Mega Fashion Hall, SM Megamall, O...   
+ 4  Third Floor, Mega Atrium, SM Megamall, Ortigas...   
+ 
+                                      Locality  
+ 0   Century City Mall, Poblacion, Makati City   
+ 1  Little Tokyo, Legaspi Village, Makati City   
+ 2  Edsa Shangri-La, Ortigas, Mandaluyong City   
+ 3      SM Megamall, Ortigas, Mandaluyong City   
+ 4      SM Megamall, Ortigas, Mandaluyong City   
+ 
+                                     Locality Verbose   Longitude   Latitude  
+ 0  Century City Mall, Poblacion, Makati City, Mak...  121.027535  14.565443   
+ 1  Little Tokyo, Legaspi Village, Makati City, Ma...  121.014101  14.553708   
+ 2  Edsa Shangri-La, Ortigas, Mandaluyong City, Ma...  121.056831  14.581404   
+ 3  SM Megamall, Ortigas, Mandaluyong City, Mandal...  121.056475  14.585318   
+ 4  SM Megamall, Ortigas, Mandaluyong City, Mandal...  121.057508  14.584450   
+ 
+                            Cuisines  ...          Currency Has Table booking  
+ 0        French, Japanese, Desserts  ...  Botswana Pula(P)               Yes   
+ 1                          Japanese  ...  Botswana Pula(P)               Yes   
+ 2  Seafood, Asian, Filipino, Indian  ...  Botswana Pula(P)               Yes   
+ 3                   Japanese, Sushi  ...  Botswana Pula(P)                No   
+ 4                  Japanese, Korean  ...  Botswana Pula(P)               Yes   
+ 
+   Has Online delivery Is delivering now Switch to order menu Price range  
+ 0                  No                No                   No           3   
+ 1                  No                No                   No           3   
+ 2                  No                No                   No           4   
+ 3                  No                No                   No           4   
+ 4                  No                No                   No           4   
+ 
+    Aggregate rating  Rating color Rating text Votes  
+ 0               4.8    Dark Green   Excellent   314  
+ 1               4.5    Dark Green   Excellent   591  
+ 2               4.4         Green   Very Good   270  
+ 3               4.9    Dark Green   Excellent   365  
+ 4               4.8    Dark Green   Excellent   229  
+
+ [5 rows x 21 columns]
+
+
+Restaurant ID  Restaurant Name  Country Code       City  
+ count    9.551000e+03             9551   9551.000000       9551   
+ unique            NaN             7446           NaN        141   
+ top               NaN  Cafe Coffee Day           NaN  New Delhi   
+ freq              NaN               83           NaN       5473   
+ mean     9.051128e+06              NaN     18.365616        NaN   
+ std      8.791521e+06              NaN     56.750546        NaN   
+ min      5.300000e+01              NaN      1.000000        NaN   
+ 25%      3.019625e+05              NaN      1.000000        NaN   
+ 50%      6.004089e+06              NaN      1.000000        NaN   
+ 75%      1.835229e+07              NaN      1.000000        NaN   
+ max      1.850065e+07              NaN    216.000000        NaN   
+
+
+                           Address         Locality  
+ count                         9551             9551   
+ unique                        8918             1208   
+ top     Dilli Haat, INA, New Delhi  Connaught Place   
+ freq                            11              122   
+ mean                           NaN              NaN   
+ std                            NaN              NaN   
+ min                            NaN              NaN   
+ 25%                            NaN              NaN   
+ 50%                            NaN              NaN   
+ 75%                            NaN              NaN   
+ max                            NaN              NaN   
+
+
+                   Locality Verbose    Longitude     Latitude      Cuisines  
+ count                         9551  9551.000000  9551.000000          9542   
+ unique                        1265          NaN          NaN          1825   
+ top     Connaught Place, New Delhi          NaN          NaN  North Indian   
+ freq                           122          NaN          NaN           936   
+ mean                           NaN    64.126574    25.854381           NaN   
+ std                            NaN    41.467058    11.007935           NaN   
+ min                            NaN  -157.948486   -41.330428           NaN   
+ 25%                            NaN    77.081343    28.478713           NaN   
+ 50%                            NaN    77.191964    28.570469           NaN   
+ 75%                            NaN    77.282006    28.642758           NaN   
+ max                            NaN   174.832089    55.976980           NaN   
+ 
+         ...            Currency Has Table booking Has Online delivery  
+ count   ...                9551              9551                9551   
+ unique  ...                  12                 2                   2   
+ top     ...  Indian Rupees(Rs.)                No                  No   
+ freq    ...                8652              8393                7100   
+ mean    ...                 NaN               NaN                 NaN   
+ std     ...                 NaN               NaN                 NaN   
+ min     ...                 NaN               NaN                 NaN   
+ 25%     ...                 NaN               NaN                 NaN   
+ 50%     ...                 NaN               NaN                 NaN   
+ 75%     ...                 NaN               NaN                 NaN   
+ max     ...                 NaN               NaN                 NaN   
+ 
+        Is delivering now Switch to order menu  Price range  Aggregate rating  
+ count               9551                 9551  9551.000000       9551.000000   
+ unique                 2                    1          NaN               NaN   
+ top                   No                   No          NaN               NaN   
+ freq                9517                 9551          NaN               NaN   
+ mean                 NaN                  NaN     1.804837          2.666370   
+ std                  NaN                  NaN     0.905609          1.516378   
+ min                  NaN                  NaN     1.000000          0.000000   
+ 25%                  NaN                  NaN     1.000000          2.500000   
+ 50%                  NaN                  NaN     2.000000          3.200000   
+ 75%                  NaN                  NaN     2.000000          3.700000   
+ max                  NaN                  NaN     4.000000          4.900000   
+ 
+         Rating color Rating text         Votes  
+ count           9551        9551   9551.000000  
+ unique             6           6           NaN  
+ top           Orange     Average           NaN  
+ freq            3737        3737           NaN  
+ mean             NaN         NaN    156.909748  
+ std              NaN         NaN    430.169145  
+ min              NaN         NaN      0.000000  
+ 25%              NaN         NaN      5.000000  
+ 50%              NaN         NaN     31.000000  
+ 75%              NaN         NaN    131.000000  
+ max              NaN         NaN  10934.000000  
+ 
+ [11 rows x 21 columns],
+ Restaurant ID           0
+ Restaurant Name         0
+ Country Code            0
+ City                    0
+ Address                 0
+ Locality                0
+ Locality Verbose        0
+ Longitude               0
+ Latitude                0
+ Cuisines                9
+ Average Cost for two    0
+ Currency                0
+ Has Table booking       0
+ Has Online delivery     0
+ Is delivering now       0
+ Switch to order menu    0
+ Price range             0
+ Aggregate rating        0
+ Rating color            0
+ Rating text             0
+ Votes                   0
+ dtype: int64)
+
+
+Dataset Overview
+    Total entries (rows): 9,551 restaurants
+    Total features (columns): 21
+
+
+ Column Breakdown
+
+| Column Name              | Description                            |
+| ------------------------ | -------------------------------------- |
+| `Restaurant ID`          | Unique ID of the restaurant            |
+| `Restaurant Name`        | Name of the restaurant                 |
+| `Country Code`           | Numeric code representing the country  |
+| `City`                   | City where the restaurant is located   |
+| `Address`                | Full address                           |
+| `Locality`               | Smaller area/zone within the city      |
+| `Locality Verbose`       | Detailed description of locality       |
+| `Longitude` / `Latitude` | Geographic coordinates                 |
+| `Cuisines`               | Types of cuisines offered              |
+| `Average Cost for two`   | Average price for two people           |
+| `Currency`               | Currency used (e.g., INR, USD)         |
+| `Has Table booking`      | Yes/No                                 |
+| `Has Online delivery`    | Yes/No                                 |
+| `Is delivering now`      | Yes/No                                 |
+| `Switch to order menu`   | Yes/No (mostly "No")                   |
+| `Price range`            | Integer scale: 1 (low) to 4 (high)     |
+| `Aggregate rating`       | Float scale: 0.0 to 5.0                |
+| `Rating color`           | Color label for rating (e.g., "Green") |
+| `Rating text`            | Description label (e.g., "Excellent")  |
+| `Votes`                  | Number of user votes                   |
+
+
+ Sample Rows (First 5)
+
+| Restaurant Name  | City             | Cuisines                   | Price range | Rating | Votes |
+| ---------------- | ---------------- | -------------------------- | ----------- | ------ | ----- |
+| Le Petit Souffle | Makati City      | French, Japanese, Desserts | 3           | 4.8    | 314   |
+| Izakaya Kikufuji | Makati City      | Japanese                   | 3           | 4.5    | 591   |
+| Heat             | Mandaluyong City | Seafood, Asian, Filipino   | 4           | 4.4    | 270   |
+| Ooma             | Mandaluyong City | Japanese, Sushi            | 4           | 4.9    | 365   |
+| Sambo Kojin      | Mandaluyong City | Japanese, Korean           | 4           | 4.8    | 229   |
+
+Missing Values
+    Cuisines: 9 missing values (all other columns are complete)
+
+
+Key Statistics
+
+Top Cuisine: North Indian (936 times)
+Most Frequent Restaurant: Cafe Coffee Day (83 entries)
+Most Restaurants by City: New Delhi (5,473 restaurants)
+Rating Range:
+    Min: 0.0
+    Max: 4.9
+    Avg: ~2.67
+Votes Range:
+    Min: 0
+    Max: 10,934
+    Median: 31
+
+
+This Dataset Can Be Used For:
+
+Top Cuisines → Cuisines
+City Analysis → City, Rating
+Price Range Distribution → Price range
+Online Delivery → Has Online delivery, Rating
+Restaurant Chains → Restaurant Name
+Map Plotting → Latitude, Longitude
+Votes & Rating Correlation → Votes, Aggregate rating
+Cuisine Combinations → Cuisines (with splitting)
+Review Sentiment → No review text in this dataset, so Level 3 Task 1 (Review keywords) may not be applicable.
