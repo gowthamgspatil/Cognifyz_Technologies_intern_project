@@ -1,1 +1,72 @@
+Step-by-Step Guide to Cognifyz Internship Tasks
 
+
+
+STEP 1: Understand Internship Requirements
+
+Goal: Gain practical experience in data analysis
+
+Expected:
+     Work on at least 2 levels (e.g., Level 1 + Level 3)
+     Each level contains multiple tasks
+      You can choose any 2 tasks from Level 3 to be eligible for a stipend
+
+STEP 2: Set Up File Organization
+
+Create folders for each level and save tasks as separate notebooks/files:
+           Level_1/Task1_TopCuisines.ipynb
+           Level_2/Task2_GeographicAnalysis.ipynb
+           Level_3/Task3_Price_vs_Services.ipynb
+
+
+STEP 3: Perform Analysis for Each Task
+
+
+Level 1 Tasks: Basic Analysis
+
+These use basic pandas, matplotlib, and seaborn.
+           * Top Cuisines:
+                  Read the dataset using pandas
+                  Count values of Cuisines column
+                  Use .value_counts() to get top 3 cuisines
+                  Calculate their % from total
+           * City Analysis:
+                  Use .value_counts() to get city with most restaurants
+                  Use .groupby('City')['Rating'].mean() for avg. rating
+                  Find city with max average rating
+           * Price Range Distribution:
+                  Use .value_counts() or .hist() on Price range
+                  Plot with matplotlib or seaborn
+                  Calculate percentages of each price category
+           * Online Delivery:
+                  Check % of restaurants where Online delivery is 'Yes'
+                  Compare average ratings using groupby()
+
+
+Level 2 Tasks: Intermediate Analysis
+
+These require combinations, map plotting, or keyword analysis.
+       * Cuisine Combination:
+            Use str.split() on Cuisines and explode values
+            Count co-occurring cuisine pairs
+            Check average ratings for each combo
+       * Geographic Analysis:
+            Use folium or plotly to plot lat/lon
+            Analyze density using clustering (optional: KMeans)
+       * Restaurant Chains:
+            Check duplicate restaurant names across cities
+            Group them and analyze Rating, Votes
+       * Reviews Analysis:
+            Use nltk or textblob to find sentiment keywords
+            Check average review length vs. rating correlation
+
+
+Level 3 Tasks: Advanced
+
+These involve correlation and relationship analysis.
+      * Votes Analysis: 
+             Use .sort_values() on Votes
+             Use scatterplot or correlation to find relation with Rating
+      * Price vs. Online Delivery & Table Booking:
+             Use crosstab/heatmap for relationships
+             Compare Price range vs Online delivery & Table booking features
